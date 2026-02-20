@@ -1,0 +1,19 @@
+- name: Generate .env file
+  template:
+    src: eschool.env.j2
+    dest: "{{ app_home }}/.env"
+
+- name: Deploy systemd service
+  template:
+    src: eschool.service.j2
+    dest: /etc/systemd/system/eschool.service
+
+- name: Reload systemd
+  systemd:
+    daemon_reload: yes
+
+- name: Enable eSchool service to start on boot
+  systemd:
+    name: eschool.service
+    enabled: yes
+    state: started

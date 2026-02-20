@@ -1,0 +1,5 @@
+region            = "us-east-1"
+profile           = "yustyna"
+availability-zone = "us-east-1a"
+public-subnet     = "10.0.1.0/24"
+ami-name          = "ami-0b6c6ebed2801a5cb"
