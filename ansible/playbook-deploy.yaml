@@ -1,0 +1,5 @@
+- name: Setup eSchool auto-start
+  hosts: app
+  become: yes
+  roles:
+    - eschool

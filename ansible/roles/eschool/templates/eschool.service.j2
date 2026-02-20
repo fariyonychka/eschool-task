@@ -1,0 +1,13 @@
+[Unit]
+Description=eSchool App
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory={{ app_home }}
+EnvironmentFile={{ app_home }}/.env
+ExecStart=/usr/bin/java -jar {{ app_home }}/target/eschool.jar
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
